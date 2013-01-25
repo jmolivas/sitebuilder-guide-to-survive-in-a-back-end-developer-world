@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="apple-touch-icon" href="resources/images/icon@2x.png"/>
+	<link rel="apple-touch-startup-image" href="resources/images/splash.png" />
+	<title>Sitebuilder guia para sobrevivir en un mundo de back-end Developers</title>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Bitter:400&amp;subset=latin" media="all" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+	<link rel="stylesheet" href="kinout/stylesheets/css/reset.css">
+	<link rel="stylesheet" href="kinout/stylesheets/css/layout.css">
+	<link rel="stylesheet" href="kinout/stylesheets/css/widgets.css">
+	<link rel="stylesheet" href="assets/lib/highlight/styles/googlecode.css">
+	<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body>
+	<div class="kinout">
+
+		<section>
+			<article>
+				<h1 class="top-less">Sitebuilder guia para sobrevivir en un mundo de back-end Developers</h1>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Acerca de mí</h2>
+				<p class="vertical">
+					<img src="assets/images/real-me-blog.jpg" class="bordered size_256 center image-shadow">
+				</p>
+				<p class="vertical">Mi nombre es Jesús Manuel Olivas</p>
+				<p class="vertical">Me pueden encontrar en twitter como <strong>@jmolivas</strong><br/>
+				En mi blog http://jmolivas.com</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Y esto de que se trata ?</h2>
+				<p>
+					<div class="left">
+						Cuando recién entras en el mundo de Drupal dificilmente vas a modificar módulos y codear hooks de manera inmediata.
+						<br/><br/>
+						Esta sesión es un vistazo general de módulos que te pueden servir para armar algo más que sitios de 4/5 páginas y un formulario de contacto. Adicionalmente se mostrará como agregar funcionalidad responsiva y que módulos podemos utilizar para lograr esto.
+					</div>
+				</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>WAT</h2>
+				<p>
+					<p><img src="assets/images/wat.jpg" class="bordered center image-shadow"></p>
+				</p>
+			</article>
+		</section>		
+
+		<section>
+			<article>
+				<h2>Drupal es un CMS/CMF multipropósito</h2>
+				<div class="half">
+					<p>
+						<ul class="left">
+							<li>Curva de aprendizaje inicial pronunciada.</li>
+							<li>Cantidad mínima de módulos en el núcleo, instalación por defecto.</li>
+							<li>Falta de uniformidad en interfaz visual.</li>
+							<li>Compatibilidad inversa.</li>
+							<li>El Drupal way.</li>
+						</ul>
+					</p>
+				</div>
+				<div class="half">
+					<p><img src="assets/images/learning-curve.png" class="bordered center center image-shadow"></p>
+				</div>
+			</article>
+		</section>
+		
+		<section>
+			<article>
+				<h2>Entonces...</h2>
+					<p class="left">
+						Es algo así como un compilado de módulos (ModuleMonday de Lullabot + otros sitios), para poder construir un sitio en Drupal de una manera relativamente sencilla, dejando muy claro que un mayor número de modulos utilizados puede afectar el rendimiento del sitio.
+					</p>
+					<p>
+						<h4>Y donde busco módulos</h4>
+						<ul class="left">
+							<li>
+								<a href="http://drupal.org/project/modules">Sitio oficial</a>
+							</li>
+							<li>
+								IRC #drupal-es
+							</li>
+							<li>
+								<a href="http://groups.drupal.org/spanish">Grupo de usuarios</a>
+							</li>							
+							<li>
+								<a href="http://drupal.org/project/modules">Module Monday de Lullabot</a>
+							</li>
+
+						</ul>
+					</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Y que opina @eaton & @lullabot</h2>
+				<p>
+					<p><img src="assets/images/lullabot-eaton-disclaimer.png" class="bordered center image-shadow"></p>
+				</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Ya encontré uno y ahora qué hago ?</h2>
+				<p>
+					<ul class="left">
+						<li>Verificar estatus (Maintenance & Development)</li>
+						<li>Revisar Issues & Reporte de Bugs</li>
+						<li>Verificar actividad</li>
+					</ul>
+				</p>
+				<p>
+					<br/><br/><br/>
+					<p><img src="assets/images/module-activity.png" class="bordered center image-shadow"></p>
+				</p>
+			</article>
+		</section>
+<!--
+	Media
+	Media styles
+	Calendar
+ -->
+
+ 		<section>
+			<article>
+				<h1>Administración</h1>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Drush</h2>
+				<p class="left">
+					Drush es un shell de linea de comando para Drupal
+					<ul class="small left">
+						<li>Trabajo con paquetes. El manejador de paquetes drush le permite descargar, habilitar, deshabilitar, desinstalar y actualizar módulos, temas, perfiles y traducciones desde la linea de comando.
+						</li>
+						<li>Tareas administrativas. Ejecutar el cron, limpiar cache.</li>
+						<li>Interacción con la base de datos. Nos permite exportar/importar la base de datos. Tambien podemos ejecutar consultas, ver las credenciales (usuario/contraseña) de acceso a la base de datos.</li>
+					</ul>
+				</p>
+				&nbsp;
+				<pre class="">
+					<code>
+						pear channel-discover pear.drush.org
+						pear install drush/drush
+					</code>
+				</pre>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Quickstart</h2>
+				<p class="left">
+					Es un entorno de desarrollo pre-configurado para Drupal. 
+				</p>
+				<br/><br/>
+				<p>
+					<ul class="left">
+						<li>Soporte para Drupal 7 & Drupal 6</li>
+						<li>Ubuntu Linux, Apache, MySQL, APC, XDebug, IMAP, UploadProgress</li>
+						<li>Drush, drush make.</li>
+						<li>Netbeans and Eclipse, configurado.</li>
+					</ul>
+				</p>
+				<p>
+					<a href="http://drupal.org/project/quickstart">http://drupal.org/project/quickstart</a>
+				</p>
+				<p>
+					<a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a>
+				</p>
+			</article>
+		</section>		
+	
+		<section>
+			<article>
+				<h2>Devel</h2>
+				<p class="left">
+					Permite entre otras cosas:
+					<ul class="left">
+						<li>Mostrar un reporte de todas las consultas (queries) que cada página realiza.</li>
+						<li>Generación automatizada de nodos, comentarios, términos, usuarios y mucho más.</li>
+					</ul>
+				</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Administration menu</h2>
+				<p class="left">
+					Proveé un menu para administración/navegación independiente del tema instalado.
+				</p>
+				<p><img src="assets/images/menu-admin.png" class="bordered center image-shadow"></p>				
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Module filter</h2>
+				<p class="left">
+					Permite buscar modulos de una manera sencilla, agrega un campo de busqueda y facilita la categorización agrupando en pestañas verticales.
+				</p>
+				<br/><br/><br/><br/>
+				<p><img src="assets/images/module-filter.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h1>Construcción</h1>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Entity Fields (CCK)</h2>
+				<p class="left">
+					Permite agregar diferentes tipos de campos a nuestras entidades (Users, Nodes, Comments,etc)
+				</p>
+				<p><img src="assets/images/entity-field-config.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Taxonomy</h2>
+				<p class="left">
+					Permite Agregar terminos para categorizar nuestros tipos de contenido.
+				</p>
+				<p><img src="assets/images/taxonomy-list.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Node Queue</h2>
+				<p class="left">
+					Permite crear listas de ornedamento arbitrarias definidas por el usuario para entidades (Nodos, taxonomías). Cuenta con una excelente integración con Views.
+				</p>
+				<p><img src="assets/images/nodequeue.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Bundle Copy - 1</h2>
+				<p class="left">
+					Permite exportar tipo de contenido y todos sus campos en código PHP. 
+				</p>
+				<p><img src="assets/images/bundle-copy-export.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Bundle Copy - 2</h2>
+				<p class="left">
+					Permite importar el código en otro sitio y re-crear tipos de contenido con todos sus campos.
+				</p>
+				<p><img src="assets/images/bundle-copy-import.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Entity Reference</h2>
+				<p class="left">
+				Muy útil para crear estructuras de datos complejas, crear relaciones entre todos los tipos de  objectos como Users, Nodes, Comments, Files, Products, Blocks, es posible agregar campos y ligarlos entre sí.
+				</p>
+				<p><img src="assets/images/choosing-field.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>References Dialog</h2>
+				<p class="left">
+					Permite buscar, editar y/o crear el tipo de contenido referenciado en una nueva ventana de dialogo.
+				</p>
+				<p><img src="assets/images/reference-dialog-config.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Rabbit Hole</h2>
+				<p class="left">
+					Permite controlar el comportamiento de la vista completa (NodeView) para cada tipo de contenido.
+				</p>
+				<p><img src="assets/images/rabbit-hole-config.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Token Formatters</h2>
+				<p class="left">
+					 Permite establecer configuración via tokens, para enlances de campos tipo referencia, es posible modificar texto y ruta a donde apunta.
+				</p>
+				<p><img src="assets/images/token-references.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>		
+
+		<section>
+			<article>
+				<h2>Views</h2>
+				<p class="left">
+					El módulo con mas instalaciones. Es la razón por la que utilizas Drupal. Permite construir consultas sobre las entidades y exponerlas como páginas, bloques, rss, etc.
+				</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Views Slideshow</h2>
+				<p class="left">
+					Utilizado en casi todos los sitio que incluyen algun elemento rotando pensemos en sliders, quotes o banners en alguna parte del sitio, la página principal por ejemplo.
+				</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>RSS Field Formatters</h2>
+				<p class="left">
+					Drupal por defecto genera RSS pero no toma ventaja del FieldAPI. este módulo agrega este soporte y permite manejar capos de tipo attachments, location, taxonomy, etc.
+				</p>
+				<p><img src="assets/images/rss-field-formatters-config.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Text Formatters</h2>
+				<p class="left">
+					Permite establecer formato para campos multi-valor y taxonomías como campos delimitados por comas ó listas de HTML.
+				</p>
+				<p><img src="assets/images/textformatter-config.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Contrucción - Hackear tpls es cosa del pasado</h2>
+				<p>
+					<h4></h4>
+					<ul class="left">
+						<li>Fences</li>
+						<li>Display Suite</li>	
+						<li>Context</li>
+						<li>Delta</li>
+					</ul>
+				</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h1>Interacción</h1>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Webform</h2>
+				<p class="left">
+					Permite crear formularios para capturar información de los visitantes del sitio. Estos formularios pueden tener campos customizados.
+				</p>
+				<p><img src="assets/images/webform-config.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Client side validation</h2>
+				<p class="left">
+					Es basicamante un wrapper para el plugin jQuery-Validate. Este permite configurar los parámetros que el plugin necesita para trabajar, como los tipos de validaciones, acciones que se ejecutarán, como y donde mostrar los errores.
+				</p>
+				<p><img src="assets/images/clientside-validation-in-action.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Disqus</h2>
+				<p class="left">
+					Permite administrar los comentarios con el servicio de Disqus.
+				</p>
+				<p><img src="assets/images/disqus.png" class="bordered center image-shadow"></p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2>Follow</h2>
+				<p class="left">
+					Agrega enlaces a sitios de varias redes sociales a nivel del sitio o por usuario
+				</p>
+				<p><img src="assets/images/follow.png" class="bordered center image-shadow"></p>				
+			</article>
+		</section>		
+			
+		<section>
+			<article>
+				<h2>Redes sociales</h2>
+				<p class="left">
+					<ul class="left">
+						<li>Social Share</li>
+						<li>Service links</li>
+						<li>Share Buttons (AddToAny)</li>
+						<li>ShareThis</li>
+						<li>SexyBookmarks</li>
+					</ul>
+				</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h1>RWD (Diseño Web Responsivo)</h1>
+			</article>
+		</section>
+
+		<section>
+			<h2 class="medium">Módulos para agregar funcionalidad responsiva/adaptiva.</h2>
+			<article>
+				<p class="vertical">
+					<h4>Imágenes : <mark>Client-side adaptive image</mark></h4>
+					<a href="http://drupal.org/project/cs_adaptive_image">http://drupal.org/project/cs_adaptive_image</a>
+					<br/><br/>
+					<h4>Videos : <mark>FitVids</mark></h4>
+					<a href="http://drupal.org/project/fitvids">http://drupal.org/project/fitvids</a>
+					<br/><br/>
+					<h4>Videos : <mark>Slider</mark></h4>
+					<a href="http://drupal.org/project/flexslider">http://drupal.org/project/flexslider</a>
+				</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2 class="medium"> Referencias</h2>
+				<p class="left small ">
+					Slides hechas con kinout<br/>
+					<a href="http://github.com/soyjavi/kinout">kinout on github</a>
+				</p>
+				<p class="left small ">
+					Tipografías utlizadas Bitter & Open Sans<br/>
+					<a href="http://www.google.com/webfonts/specimen/Bitter">Open Sans en google webfont directory</a><br/>
+					<a href="http://www.google.com/webfonts/specimen/Open+Sans">Bitter en google webfont directory</a><br/>
+				</p>
+				</p>
+			</article>
+		</section>
+
+		<section>
+			<article>
+				<h2 class="medium"> Agradecimientos </h2>
+				<p class="vertical">
+					<img src="assets/images/real-me-blog.jpg" class="bordered size_256 center image-shadow">
+				</p>
+				<p>Sitebuilder guia para sobrevivir en un mundo de back-end Developers - Panamá Octubre 2012</p>
+				<p class="vertical">Jesús Manuel Olivas | @jmolivas | http://jmolivas.com</p>
+			</article>
+		</section>
+	</div>
+
+	<script src="kinout/javascripts/Kinout.js"></script>
+	<script src="kinout/javascripts/Kinout.Core.js"></script>
+	<script src="kinout/javascripts/Kinout.Dom.js"></script>
+	<script src="kinout/javascripts/Kinout.Router.js"></script>
+	<script src="kinout/javascripts/Kinout.Events.js"></script>
+	<script src="kinout/javascripts/Kinout.Url.js"></script>
+	<script src="kinout/javascripts/Kinout.View.js"></script>
+
+	<script>
+		KINOUT.Core.init({ template: 'circle' });
+	</script>
+
+	<script src="assets/lib/highlight/highlight.pack.js"></script>
+
+	<script type="text/javascript">
+		hljs.tabReplace = ' ';
+		//hljs.tabReplace = '<span class="indent">\t</span>';
+  		hljs.initHighlightingOnLoad();
+	</script>
+</body>
+</html>
