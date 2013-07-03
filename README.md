@@ -1,4 +1,4 @@
-sitebuilder-guia-para-sobrevivir-en-un-mundo-de-back-end-developers
+Sitebuilder guide to survive in a back-end Developer world
 =============================
 
- Slides para charla DrupalCamp Centroamérica 2012
+ Slides for SandCamp 2013
